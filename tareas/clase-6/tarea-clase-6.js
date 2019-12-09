@@ -18,7 +18,7 @@ if (validar_integrantes(cant_familiares)==="" && Number(cant_familiares)>0){
 			//Creando nodo BOOTSTRAP
 
 			const div1=document.createElement("div")
-			div1.className="input-group mb-3 col-sm-3"
+			div1.className="input-group mb-3 col-sm-12"
 
 			const div2=document.createElement("div")
 			div2.className="input-group-prepend"
@@ -38,23 +38,23 @@ if (validar_integrantes(cant_familiares)==="" && Number(cant_familiares)>0){
 			input["aria-describedby"]="inputGroup-sizing-default"
 			div1.appendChild(input)
 
-			document.querySelector("body").appendChild(div1)
+			document.querySelector("#input_button").appendChild(div1)
 
 
 		}
 		const boton=document.createElement("button")
 		boton.textContent="Calcular"
 		boton.className="btn btn-primary"
-		document.querySelector("body").appendChild(boton)
+		document.querySelector("#input_button").appendChild(boton)
 
 		const boton_salario=document.createElement("button")
 		boton_salario.textContent="Agregar salarios"
 		boton_salario.id="salarios"
 		boton_salario.className="btn btn-primary"
-		document.querySelector("body").appendChild(boton_salario)
+		document.querySelector("#input_button").appendChild(boton_salario)
 
 		let parrafo=document.createElement("p")
-		document.querySelector("body").appendChild(parrafo)
+		document.querySelector(".container").appendChild(parrafo)
 	}
 	crear_inputs(cant_familiares)
 
@@ -124,7 +124,7 @@ boton_salario.onclick=function(){
 			//Creando nodo BOOTSTRAP
 
 			const div1=document.createElement("div")
-			div1.className="input-group mb-3 col-sm-3"
+			div1.className="input-group mb-3 col-sm-12"
 
 			const div2=document.createElement("div")
 			div2.className="input-group-prepend"
@@ -144,7 +144,7 @@ boton_salario.onclick=function(){
 			input.id="salario"
 			div1.appendChild(input)
 
-			document.querySelector("body").appendChild(div1)
+			document.querySelector("#input_button_2").appendChild(div1)
 
 		}
 		if(document.querySelector("#calcular-salarios")==null){
@@ -152,14 +152,14 @@ boton_salario.onclick=function(){
 			boton_calcular_salarios.textContent="Calcular salarios"
 			boton_calcular_salarios.id="calcular-salarios"
 			boton_calcular_salarios.className="btn btn-primary"
-			document.querySelector("body").appendChild(boton_calcular_salarios)
+			document.querySelector("#input_button_2").appendChild(boton_calcular_salarios)
 		}else{
 			document.querySelector("#calcular-salarios").remove()
 			let boton_calcular_salarios=document.createElement("button")
 			boton_calcular_salarios.textContent="Calcular salarios"
 			boton_calcular_salarios.id="calcular-salarios"
 			boton_calcular_salarios.className="btn btn-primary"
-			document.querySelector("body").appendChild(boton_calcular_salarios)
+			document.querySelector("#input_button_2").appendChild(boton_calcular_salarios)
 		}
 
 		salarios_ya_creados+=document.querySelectorAll("#salario").length
@@ -244,7 +244,7 @@ function mostrar_calculos_salarios(){
 }
 
 function validar_integrantes(integrantes){
-	if (integrantes<25 && !/[a-z]/i.test(integrantes) ){
+	if (integrantes<25 && !/[a-z]/i.test(integrantes) || integrantes==null){
 		return ""
 	}if (/[a-z]/i.test(integrantes)){
 		return "Solo se puede ingresar numeros"
