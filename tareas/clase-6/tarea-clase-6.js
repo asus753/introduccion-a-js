@@ -53,8 +53,7 @@ if (validar_integrantes(cant_familiares)==="" && Number(cant_familiares)>0){
 		boton_salario.className="btn btn-primary"
 		document.querySelector("#input_button").appendChild(boton_salario)
 
-		let parrafo=document.createElement("p")
-		document.querySelector(".container").appendChild(parrafo)
+		
 	}
 	crear_inputs(cant_familiares)
 
